@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b05f4c9c1f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+        *{
+            box-sizing:Border-box;
+        }
+        body{
+            padding:0;
+            margin:0;
+            font-family: "Montserrat", sans-serif;
+        }
+        .aside{
+            height:100%;
+            width:200px;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index:1;
+            overflow:auto;
+        }
+        .aside .bgimg{
+            background-image: url(../dvdvcd.jpg);
+            min-height:100%;
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        .onenav{
+            padding:0;
+            margin:0;
+            overflow: hidden;
+            position:fixed;
+            right:0;
+            top:0;
+            background-color:white;
+        }
+        .onenav a{
+            float:right;
+            text-decoration:none;
+            color:grey;
+            font-size:34px;
+            padding:16px;
+        }
+        .onenav a:hover{
+            color:black;
+            background-color: grey;
+        }
+        .main{
+            margin-left:40%;
+            margin-top:100px;
+        }
+        .maininfo{
+            max-width:1000px;
+            margin:auto;
+        }
+        .jane{
+            text-align: center;
+            padding:10px;
+        }
+        .jane h1{
+            font-size:54px;
+        }
+        .jane p{
+            font-size:14px;
+        }
+        .onlythis{
+            max-width:500px;
+            margin:auto;
+            display:none;
+        }
+        #but1{
+            width:180px;
+            border:none;
+            background-color: #ddd;
+            padding:10px;
+            margin-top:10px;
+        }
+        #but1:hover{
+            background-color:grey;
+        }
+        .picport{
+            padding:10px;
+            color:#757575;
+        }
+        .imgflex{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap:10px;
+        }
+        .imgflex .leftflex,.imgflex .rightflex{
+            flex:50%;
+        }
+        .about{
+            padding:10px;
+            color:#757575;
+        }
+        .white{
+            background-color: #f1f1f1;
+            width:100%;
+        }
+        .white .grey1{
+            width:95%;
+            background-color:#616161;
+            color:white;
+            text-align: center;
+            padding:4px;
+        }
+        .white .grey2{
+            width:85%;
+            background-color:#616161;
+            text-align: center;
+            color: white;
+            padding:4px;
+        }
+        .white .grey3{
+            width:80%;
+            color:White;
+            background-color:#616161;
+            text-align: center;
+            padding:4px;
+        }
+        .flexcont{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            color:white;
+            background-color:#616161;
+        }
+        .flexcont .contadd{
+            flex:25%;
+            text-align: center;
+        }
+        #but2{
+            border:none;
+            background-color:#f1f1f1;
+            width:180px;
+            padding:10px;
+        }
+        #but2:hover{
+            background-color:grey;
+        }
+        .reput ul li .imgrflex{
+            display:flex;
+            gap:5px;
+        }
+        .reput ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        .reput ul li{
+            margin-bottom:14px;
+        }
+        .card .header{
+            background-color:#616161;
+            color:White;
+            text-align:center;
+            padding:15px;
+        }
+        .card .header2{
+            background-color:black;
+            color:White;
+            text-align:center;
+            padding:15px;
+        }
+        .card .content ul{
+            list-style:none;
+            padding:0;
+            margin:0;
+            border:1px solid #333;
+        }
+        .card .content ul:hover{
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        }
+        .card ul li{
+            text-align: center;
+            border-bottom:1px solid grey;
+            padding:15px;
+            color:#333;
+        }
+        .card ul #activebut{
+            background-color:#ddd;
+        }
+        .card ul #activebut #but3{
+            color:white;
+            color:#333;
+            border:none;
+            width:100px;
+            padding:10px;
+        }
+        .card ul #activebut #but3:hover{
+            background-color:Black;
+            color:white;
+        }
+        .suggest{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap:7px;
+        }
+        .suggest .card{
+            flex:50%;
+        }
+        .contact div i{
+            font-size:22px;
+            margin:7px;
+        }
+        .contact div span{
+            margin-left:7px;
+        }
+        .contact .imgcity{
+            margin-top:25px;
+        }
+        .contact input{
+            width:100%;
+            margin:5px;
+            padding:10px;
+        }
+        #but4{
+            margin:5px;
+            border:none;
+            padding:10px;
+            background-color:#ccc;
+        }
+        #but4:hover{
+            background-color:#aaa;
+        }
+        .footer{
+            background-color:#f1f1f1;
+            padding:30px;
+            text-align: center;
+        }
+        .iconmain{
+            display:flex;
+            padding:30px;
+            justify-content:center;
+            gap:7px;
+        }
+        .footer p a{
+            text-decoration:none;
+            color:#757575;
+        }
+        .footer p a:hover {
+            color:Crimson; 
+        }
+        @media only screen and (max-width:990px){
+            .aside{
+                display:none;
+            }
+            .main{
+                margin-left:0;
+            }
+            .onlythis{
+                display:block;
+            }
+        }
+        @media only screen and (max-width:600px){
+            .onlythis{
+                max-width:1000px;
+                margin:auto;
+            }
+            .imgflex,.suggest{
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <div style="width:40%;" class="aside">
+        <div class="bgimg"></div>
+    </div>
+
+    <div class="onenav">
+        <a href="#"><i class="fa-sharp fa-solid fa-bars"></i></a>
+        </div>
+
+    <div class="main">
+        <div class="maininfo">
+        <div class="jane">
+            <h1>Jane Doe</h1>
+            <p>Photographer and Web Designer.</p>
+            <div class="onlythis"><img style="width:100%;height:Auto;" src="https://www.w3schools.com/w3images/profile_girl.jpg" alt="pr"></div>
+            <button id="but1"><i class="fa-sharp fa-solid fa-download"></i> Download Resume</button>
+        </div>
+        <div class="picport">
+            <h3>My Portfolio</h3>
+            <hr color="#aaa">
+            <div class="imgflex">
+                <div class="leftflex">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/wedding.jpg" alt="ph">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/rocks.jpg" alt="ph">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/sailboat.jpg" alt="ph">
+                </div>
+                <div class="rightflex">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/underwater.jpg" alt="ph">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/chef.jpg" alt="ph">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/wedding.jpg" alt="ph">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/p6.jpg" alt="ph">
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <h3>About</h3>
+            <hr color="#aaa">
+            <p>Some text about me. Some text about me. I am lorem ipsum 
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+             exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate 
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum consectetur adipiscing elit, sed do e
+              iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+               ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+               t aliquip ex ea commodo consequat.</p><br>
+               <h3>My Skills</h3><br>
+               <h4>Photography</h4>
+               <div class="white"><div class="grey1">95%</div></div>
+               <h4>Web Design</h4>
+               <div class="white"><div class="grey2">85%</div></div>
+               <h4>Photoshop</h4>
+               <div class="white"><div class="grey3">80%</div></div><br>
+               <div class="flexcont">
+                <div class="contadd">
+                    <h3>14+</h3>
+                    <p>Partners</p>
+                </div>
+                <div class="contadd">
+                    <h3>55+</h3>
+                    <p>Projects Done</p>
+                </div>
+                <div class="contadd">
+                    <h3>89+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="contadd">
+                    <h3>150+</h3>
+                    <p>Meetings</p>
+                </div>
+               </div><br>
+               <button id="but2"><i class="fa-sharp fa-solid fa-download"></i>Download Resume</button><br>
+               <div class="reput">
+                <h3>My Reputation</h3><br>
+
+                <ul>
+                    <li>
+                        <div class="imgrflex"><img style="width:80px;height:auto;border-radius:50%;" src="https://www.w3schools.com/w3images/avatar_smoke.jpg" alt="ph">
+                        <div><p>Chandler Bing. <span style="font-size:13px;"> Web Designer.</span></p>
+                        <p style="font-size:13px;">Jane Doe is just awesome. I am so happy to have met her!</p></div></div>
+                    </li>
+
+                    <li>
+                        <div class="imgrflex">
+                            <img style="width:80px;height:auto;border-radius:50%;" src="https://www.w3schools.com/w3images/bandmember.jpg" alt="ph">
+                            <div><p>Chris Fox. <span style="font-size:13px;">CEO at Mighty Schools.</span>
+                            <p style="font-size:13px;">CEO at Mighty Schools.</p></p></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgrflex">
+                        <img style="width:80px;height:auto;border-radius:50%;" src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="ph">
+                     <div><p>Rebecca Flex. <span style="font-size:13px;">CEO at Company.</span>
+                    <p style="font-size:13px;">No one is better than Jane Doe.</p></p></div></div>
+                    </li>
+                </ul>
+
+               </div>
+
+               <div class="price">
+                <h3>My Reputation</h3><br>
+                <div class="suggest">
+                    <div class="card">
+                        <div class="header">
+                            <h3>Basic</h3></div>
+                            <div class="content">
+                                <ul>
+                                    <li>Web Design</li>
+                                    <li>Photography</li>
+                                    <li>5GB Storage</li>
+                                    <li>Mail Support</li>
+                                    <li>
+                                        <h3>$ 10</h3>
+                                        <p>per month</p>
+                                    </li>
+                                    <li id="activebut">
+                                        <button id="but3">Sign Up</button>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="header2">
+                            <h3>Pro</h3></div>
+                            <div class="content">
+                                <ul>
+                                    <li>Web Design</li>
+                                    <li>Photography</li>
+                                    <li>50GB Storage</li>
+                                    <li>Endless Support</li>
+                                    <li>
+                                        <h3>$ 25</h3>
+                                        <p>per month</p>
+                                    </li>
+                                    <li id="activebut">
+                                        <button id="but3">Sign Up</button>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+
+                </div>
+               </div><br>
+
+               <div class="contact">
+                <h3>Contact Me</h3><hr>
+                <div><i class="fa-sharp fa-solid fa-location-dot"></i> <span> Chicago, US</span></div>
+                <div><i class="fa-sharp fa-solid fa-phone"></i><span> Phone: +00 151515</span></div>
+                <div><i class="fa-sharp fa-solid fa-envelope"></i><span> Email: mail@mail.com</span></div>
+                <div class="imgcity">
+                    <img style="width:100%;height:auto;" src="https://www.w3schools.com/w3images/map.jpg" alt="city">
+                </div><br>
+                <p>Lets get in touch. Send me a message:</p>
+                <form action="#">
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Message">
+                    <button id="but4"><i class="fa-sharp fa-solid fa-paper-plane"></i> SEND MESSAGE</button>
+                </form>
+               </div><br><br>
+
+               <div class="footer">
+                <div class="iconmain">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-snapchat"></i>
+                <i class="fa-brands fa-pinterest-p"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i></div>
+                <p>Created by <a href="#">Saba Fesvianidze</a></p>
+               </div>
+
+        </div>
+        </div>
+    </div>
+
+ 
+</body>
+</html>
